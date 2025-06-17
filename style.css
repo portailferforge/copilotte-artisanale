@@ -1,28 +1,35 @@
+/* Style général */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: white; /* Fond blanc */
-    color: black; /* Texte noir pour bien voir */
+    background: white !important; /* Fond blanc forcé */
+    color: black;
 }
+
+/* Barre de navigation */
 nav {
     display: flex;
     justify-content: center;
     gap: 20px;
-    background: #ddd; /* Fond gris clair */
+    background: #ddd; /* Gris clair */
     padding: 10px;
 }
+
+/* Boutons de navigation */
 .tab-button {
     background: black; /* Boutons en noir */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    color: white; /* Texte blanc pour contraste */
+    color: white; /* Texte blanc */
     font-weight: bold;
 }
 .tab-button:hover {
-    background: #222; /* Bouton un peu plus clair au survol */
+    background: #222; /* Gris foncé au survol */
 }
+
+/* Contenu des onglets */
 .tab-content {
     display: none;
     padding: 20px;
