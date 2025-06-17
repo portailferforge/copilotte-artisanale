@@ -4,11 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🧭 MDF Cockpit</title>
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #0f0f0f;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    .tab-bar {
+      display: flex;
+      background: #1e1e1e;
+      padding: 0.5rem;
+      gap: 0.5rem;
+    }
+    .tab {
+      background: #333;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .tab.active {
+      background: #007bff;
+    }
+    .tab-content {
+      display: none;
+      padding: 1rem;
+      border-top: 1px solid #444;
+      height: 70vh;
+    }
+    .tab-content.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <nav class="tab-bar">
-    <button class="tab" data-target="console">Console</button>
+    <button class="tab active" data-target="console">Console</button>
     <button class="tab" data-target="croquis">Croquis</button>
     <button class="tab" data-target="images">Images IA</button>
   </nav>
@@ -19,13 +53,30 @@
   </section>
 
   <section id="croquis" class="tab-content">
-    <iframe src="croquis.html" frameborder="0"></iframe>
+    <h2>🖌️ Espace Croquis</h2>
+    <p>Ici tu pourras dessiner, explorer, rêver.</p>
   </section>
 
   <section id="images" class="tab-content">
-    <iframe src="image-gen.html" frameborder="0"></iframe>
+    <h2>🧠 Générateur d’images IA</h2>
+    <p>Une image vaut mille étoiles, non ?</p>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    console.log("✅ JS actif !");
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-target');
+        tabs.forEach(t => t.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        const target = document.getElementById(targetId);
+        if (target) target.classList.add('active');
+        else console.warn("⚠️ Aucun élément trouvé avec l’ID :", targetId);
+      });
+    });
+  </script>
 </body>
 </html>
