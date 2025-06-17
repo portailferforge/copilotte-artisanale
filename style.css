@@ -2,26 +2,26 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: white;
-    color: black;
+    background: white; /* Fond blanc */
+    color: black; /* Texte noir pour bien voir */
 }
 nav {
     display: flex;
     justify-content: center;
     gap: 20px;
-    background: #ddd;
+    background: #ddd; /* Fond gris clair */
     padding: 10px;
 }
 .tab-button {
-    background: #444;
+    background: black; /* Boutons en noir */
     border: none;
     padding: 10px 20px;
     cursor: pointer;
-    color: #fff;
+    color: white; /* Texte blanc pour contraste */
     font-weight: bold;
 }
 .tab-button:hover {
-    background: #555;
+    background: #222; /* Bouton un peu plus clair au survol */
 }
 .tab-content {
     display: none;
