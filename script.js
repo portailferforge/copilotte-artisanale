@@ -1,3 +1,14 @@
+document.addEventListener("DOMContentLoaded", function() {
+    const buttons = document.querySelectorAll(".tab-button");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", function() {
+            console.log("Bouton cliqué :", button.textContent);
+        });
+    });
+});
+
+
 console.log("Test JS !");
 console.log("Le script JavaScript est chargé !");
 document.addEventListener("DOMContentLoaded", () => {
