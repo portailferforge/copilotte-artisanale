@@ -1,3 +1,4 @@
+console.log("✅ JS actif !");
 const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.tab-content');
 
