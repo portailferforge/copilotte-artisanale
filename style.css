@@ -27,6 +27,6 @@ nav {
     display: none;
     padding: 20px;
 }
-.tab-content.hidden {
-    display: none;
+.tab-content.active {
+    display: block;
 }
