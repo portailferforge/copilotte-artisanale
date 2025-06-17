@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 console.log("Test JS !");
 console.log("Le script JavaScript est chargé !");
 document.addEventListener("DOMContentLoaded", () => {
