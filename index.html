@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>🧭 MDF Cockpit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     body {
       font-family: sans-serif;
@@ -12,12 +12,14 @@
       margin: 0;
       padding: 0;
     }
+
     .tab-bar {
       display: flex;
       background: #1e1e1e;
       padding: 0.5rem;
       gap: 0.5rem;
     }
+
     .tab {
       background: #333;
       color: white;
@@ -26,15 +28,16 @@
       cursor: pointer;
       border-radius: 4px;
     }
+
     .tab.active {
-      background: #007bff;
+      background-color: #007bff;
     }
+
     .tab-content {
       display: none;
       padding: 1rem;
-      border-top: 1px solid #444;
-      height: 70vh;
     }
+
     .tab-content.active {
       display: block;
     }
@@ -48,35 +51,36 @@
   </nav>
 
   <section id="console" class="tab-content active">
-    <h1>🧭 Console de lancement MDF</h1>
-    <p>Bienvenue à bord, capitaine.</p>
+    <h2>🧭 Console</h2>
+    <p>Bienvenue, MDF. Le cockpit t'attend.</p>
   </section>
 
   <section id="croquis" class="tab-content">
-    <h2>🖌️ Espace Croquis</h2>
-    <p>Ici tu pourras dessiner, explorer, rêver.</p>
+    <h2>✏️ Croquis</h2>
+    <p>Espace pour dessiner ou t’exprimer.</p>
   </section>
 
   <section id="images" class="tab-content">
-    <h2>🧠 Générateur d’images IA</h2>
-    <p>Une image vaut mille étoiles, non ?</p>
+    <h2>🖼️ Générateur d’images</h2>
+    <p>Tu pourras bientôt lancer des prompts IA ici.</p>
   </section>
 
   <script>
-    console.log("✅ JS actif !");
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content');
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("✅ JS chargé !");
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll(".tab-content");
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        contents.forEach(c => c.classList.remove('active'));
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          contents.forEach((c) => c.classList.remove("active"));
 
-        tab.classList.add('active');
-        const targetId = tab.getAttribute('data-target');
-        const target = document.getElementById(targetId);
-        if (target) target.classList.add('active');
-        else console.warn("⚠️ Aucun élément trouvé avec l’ID :", targetId);
+          tab.classList.add("active");
+          const targetId = tab.getAttribute("data-target");
+          const target = document.getElementById(targetId);
+          if (target) target.classList.add("active");
+        });
       });
     });
   </script>
