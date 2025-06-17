@@ -2,20 +2,30 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Copilotte Studio Visuel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🧭 MDF Cockpit</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main>
-    <h1>🎨 Copilotte Sketchboard</h1>
-    <div class="toolbar">
-      <label>✏️ Couleur : <input type="color" id="color" value="#58a6ff" /></label>
-      <label>🎚️ Taille : <input type="range" id="size" min="1" max="20" value="5" /></label>
-      <button id="clear">🧼 Effacer</button>
-      <button id="save">💾 Télécharger</button>
-    </div>
-    <canvas id="canvas" width="800" height="500"></canvas>
-  </main>
+  <nav class="tab-bar">
+    <button class="tab" data-target="console">Console</button>
+    <button class="tab" data-target="croquis">Croquis</button>
+    <button class="tab" data-target="images">Images IA</button>
+  </nav>
+
+  <section id="console" class="tab-content active">
+    <h1>🧭 Console de lancement MDF</h1>
+    <p>Bienvenue à bord, capitaine.</p>
+  </section>
+
+  <section id="croquis" class="tab-content">
+    <iframe src="croquis.html" frameborder="0"></iframe>
+  </section>
+
+  <section id="images" class="tab-content">
+    <iframe src="image-gen.html" frameborder="0"></iframe>
+  </section>
+
   <script src="script.js"></script>
 </body>
 </html>
