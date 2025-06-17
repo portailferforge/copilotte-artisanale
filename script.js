@@ -1,3 +1,4 @@
+console.log("Le script JavaScript est chargé !");
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".tab-button");
     const sections = document.querySelectorAll(".tab-content");
