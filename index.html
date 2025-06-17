@@ -1,88 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <title>🧭 MDF Cockpit</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <style>
-    body {
-      font-family: sans-serif;
-      background-color: #0f0f0f;
-      color: white;
-      margin: 0;
-      padding: 0;
-    }
-
-    .tab-bar {
-      display: flex;
-      background: #1e1e1e;
-      padding: 0.5rem;
-      gap: 0.5rem;
-    }
-
-    .tab {
-      background: #333;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .tab.active {
-      background-color: #007bff;
-    }
-
-    .tab-content {
-      display: none;
-      padding: 1rem;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copilot Artisanale</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav class="tab-bar">
-    <button class="tab active" data-target="console">Console</button>
-    <button class="tab" data-target="croquis">Croquis</button>
-    <button class="tab" data-target="images">Images IA</button>
-  </nav>
-
-  <section id="console" class="tab-content active">
-    <h2>🧭 Console</h2>
-    <p>Bienvenue, MDF. Le cockpit t'attend.</p>
-  </section>
-
-  <section id="croquis" class="tab-content">
-    <h2>✏️ Croquis</h2>
-    <p>Espace pour dessiner ou t’exprimer.</p>
-  </section>
-
-  <section id="images" class="tab-content">
-    <h2>🖼️ Générateur d’images</h2>
-    <p>Tu pourras bientôt lancer des prompts IA ici.</p>
-  </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      console.log("✅ JS chargé !");
-      const tabs = document.querySelectorAll(".tab");
-      const contents = document.querySelectorAll(".tab-content");
-
-      tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          tabs.forEach((t) => t.classList.remove("active"));
-          contents.forEach((c) => c.classList.remove("active"));
-
-          tab.classList.add("active");
-          const targetId = tab.getAttribute("data-target");
-          const target = document.getElementById(targetId);
-          if (target) target.classList.add("active");
-        });
-      });
-    });
-  </script>
+    <nav>
+        <button class="tab-button" data-target="console">🖥️ Console</button>
+        <button class="tab-button" data-target="canvas">🖌️ Croquis</button>
+        <button class="tab-button" data-target="image-gen">🖼️ Générateur d’images</button>
+    </nav>
+    <section id="console" class="tab-content">Copilotte core active.</section>
+    <section id="canvas" class="tab-content hidden">Croquis interactif chargé.</section>
+    <section id="image-gen" class="tab-content hidden">Générateur d’images prêt.</section>
+    <script src="script.js"></script>
 </body>
 </html>
