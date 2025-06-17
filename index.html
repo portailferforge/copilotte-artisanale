@@ -2,16 +2,19 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Copilotte Artisanale</title>
+  <title>Copilotte Studio Visuel</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="container">
-    <h1>Copilotte Artisanale</h1>
-    <p class="intro">Interface web autonome prête au décollage.</p>
-    <button onclick="lancerCopilotte()">Démarrer</button>
-    <div id="status" aria-live="polite"></div>
+  <main>
+    <h1>🎨 Copilotte Sketchboard</h1>
+    <div class="toolbar">
+      <label>✏️ Couleur : <input type="color" id="color" value="#58a6ff" /></label>
+      <label>🎚️ Taille : <input type="range" id="size" min="1" max="20" value="5" /></label>
+      <button id="clear">🧼 Effacer</button>
+      <button id="save">💾 Télécharger</button>
+    </div>
+    <canvas id="canvas" width="800" height="500"></canvas>
   </main>
   <script src="script.js"></script>
 </body>
