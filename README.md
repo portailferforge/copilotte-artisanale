@@ -21,7 +21,7 @@ Mise à jour sur `main` = build automatique.
 2. Ouvrir dans un éditeur  
 3. Lancer `index.html` dans un navigateur
 
-## À venir
+## À  venir
 
 - Connexion API  
 - UI animée en CSS  
